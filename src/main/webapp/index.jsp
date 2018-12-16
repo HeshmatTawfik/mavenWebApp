@@ -37,4 +37,4 @@
 <h2 id="h2"> you have a question !</h2>
 <button class="contact" style="vertical-align:middle"><span>Contact us now ! </span></button>
 </body>
-</html
+</html>
