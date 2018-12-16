@@ -12,11 +12,16 @@
 <div class="LoginBox">
 
     <form method="post" action="Login">
-        <p>  Email:<input type="text" name="email" pattern="[^'\x22]+"/><br/>
-            Password:<input type="password" name="pass" /><br/>
+        <p>  Email:<input type="text" name="email" pattern="[^'\x22]+" id="email"/><br/>
+            Password:<input type="password" name="pass" id="pass"/><br/>
         </p>
-        <input type="submit" value="sign in" />
+        <input type="submit" value="sign in" id="snbtn"/>
+        <script src="ValdiateEmail.js"></script>
+        <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="disableButton.js"></script>
     </form>
+
+
 </div>
 <%
     if(session.getAttribute("email")!=null){

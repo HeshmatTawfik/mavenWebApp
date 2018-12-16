@@ -22,25 +22,13 @@
     <label> employer:<input type="radio" id="6" name="role" value="employer"><br/></label>
     <label>  applicant:<input type="radio" id="7" name="role" value="applicant"><br/></label>
 
-    <input type="submit" value="submit"   />
+    <input type="submit" value="submit"   id="snbtn2"/>
 </fieldset>
+    <script src="ValdiateEmail.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="disableButton.js"></script>
 </form>
 <script>
-/*    function validation() {
-        var email=document.getElementById.value('1');
-        var pass=document.getElementById.value('2');
-        var name=document.getElementById.value('3');
-        var age=document.getElementById.value('4');
-        var city=document.getElementById.value('5');
-        var employer=document.getElementById.value('6');
-        var applicant=document.getElementById.value('7');
-
-        if (email==""||pass==""||name==""||age==""||city==""||(employer==""||applicant=="")){
-    alert('field is empty');
-    return false;
-     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="example@example.com"
-}
-    }*/
 </script>
 </body>
 </html>
