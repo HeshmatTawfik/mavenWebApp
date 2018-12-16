@@ -1,0 +1,213 @@
+body {
+
+    background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);}
+.photo{
+    width: 570px;
+    height: 500px;
+    border-radius: 30%;
+    overflow: hidden;
+    position: absolute;
+    top: 10%;
+    left: 28%;
+}
+
+.LoginBox
+{
+    position:absolute;
+    top: 50%;
+    left: 12%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 350px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 30%;
+}
+.LoginBox input[type="text"],
+.LoginBox input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+::placeholder
+{
+    color: rgba(255,255,255,.5);
+}
+.LoginBox p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #ffffff;
+}
+.LoginBox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.LoginBox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #000000;
+    font-size: 16px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(232, 255, 236);
+
+}
+.LoginBox input[type="submit"]:hover
+{
+    background: #a7e610;
+    color: darkorchid;
+}
+.Rbox{
+    position:absolute;
+    top: 40%;
+    left: 85%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 250px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+    border-radius: 20%;
+
+}
+.Rbox p {
+
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+}
+.Rbox input[type="button"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #000000;
+    font-size: 16px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(232, 255, 236);
+    width: 100%;
+}
+.Rbox input[type="button"]:hover
+{
+    background: #a7e610;
+    color: darkorchid;
+}
+
+#h1{
+    margin-left: 4%;
+    margin-top: 5%;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "Times New Roman", serif;
+    color: black;
+    text-shadow: 0 0 9px white;
+}
+#h1{
+    transition: text-indent .5s;
+}
+#h1:hover {
+    text-indent: 5px;
+    transition: text-indent .5s;
+}
+#h1:hover::before {
+    display: inline-block;
+
+}
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: inherit;
+    border: none;
+    color: #000000;
+    text-align: center;
+    font-size: 20px;    font-weight: bolder;
+    text-shadow: 0 0 9px white;
+    font-family: "Times New Roman", serif;
+
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: default;
+    margin-left: 55%;
+    margin-top: 10px;
+    box-shadow: 0 8px 16px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(255, 0, 31);
+}
+
+.button span {
+    cursor: default;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 20px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+#h2{
+    margin-left: 78%;
+    margin-top: 250px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "Times New Roman", serif;
+    color: black;
+    text-shadow: 0 0 9px white;
+}
+#h2{
+    transition: text-indent .5s;
+}
+#h2:hover {
+    text-indent: 5px;
+    transition: text-indent .5s;
+}
+#h2:hover::before {
+    display: inline-block;
+
+}
+.contact {
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #f4f0f2;
+    border: none;
+    color: #000000;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+    text-shadow: 0 0 9px white;
+
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: default;
+    margin-left: 78%;
+    margin-top: 20px;
+    box-shadow: 0 8px 16px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(255, 0, 31);
+}

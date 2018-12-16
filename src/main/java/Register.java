@@ -49,7 +49,7 @@ public class Register extends HttpServlet {
                     }
                     String mail=rs.getString("USEREMAIL");
                     if (mail.equals(email)){
-                        RequestDispatcher rd = request.getRequestDispatcher("RegisteringForm.jsp");
+                          RequestDispatcher rd = request.getRequestDispatcher("RegisteringForm.jsp");
                         rd.include(request, response);
                         out.println("<div align=\"center\">\n" + "<span style=\"width:50px;margin-top:20px;color:black;font-size:30px;font-weight:bold;\">email already registered !try another email ! </span>" + "</div>");
                         unique=false;
@@ -68,7 +68,7 @@ public class Register extends HttpServlet {
                     stmt.setString(5, city);
                     stmt.setString(6, role);
                     stmt.execute();
-                    RequestDispatcher rd = request.getRequestDispatcher("RegisteringForm.jsp");
+                      RequestDispatcher rd = request.getRequestDispatcher("RegisteringForm.jsp");
                     rd.include(request, response);
                     out.println("<div align=\"center\">\n" + "<span style=\"width:50px;margin-top:20px;color:black;font-size:30px;font-weight:bold;\">Successfully Added A New User</span>" + "</div>");
                 }
@@ -77,7 +77,7 @@ public class Register extends HttpServlet {
             }
             else {
                 out.println("<div align=\"center\">\n" + "<span style=\"width:50px;margin-top:20px;color:black;font-size:30px;font-weight:bold;\">Please fill all fields !</span>" + "</div>");
-                RequestDispatcher rd = request.getRequestDispatcher("RegisteringForm.jsp");
+                 RequestDispatcher rd = request.getRequestDispatcher("RegisteringForm.jsp");
                 rd.include(request, response);
             }
         }
@@ -85,6 +85,6 @@ public class Register extends HttpServlet {
 
             e.printStackTrace();
         }
-////////
+
     }
 }

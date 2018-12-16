@@ -3,27 +3,38 @@
 <html>
 <head>
     <title>welcome page</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
 </head>
 <body>
 
-<form method="post" action="Login">
-    <fieldset>
-        <label > Email:<input type="text" name="email" pattern="[^'\x22]+"/><br/> </label>
-        <label>Password:<input type="password" name="pass" /><br/> </label>
-        <input type="submit" value="signin" />
-    </fieldset>
-</form>
+<h1 id="h1"> you can sign in below </h1>
+<div class="LoginBox">
+
+    <form method="post" action="Login">
+        <p>  Email:<input type="text" name="email" pattern="[^'\x22]+"/><br/>
+            Password:<input type="password" name="pass" /><br/>
+        </p>
+        <input type="submit" value="sign in" />
+    </form>
+</div>
 <%
     if(session.getAttribute("email")!=null){
         response.sendRedirect("ProfilePage.jsp");
     }
 
 %>
-<span>
-  <fieldset>
-  <b> you don't have an account ? register a new one ! </b>
-  <br> <input type="button" value="REGISTER" onclick=window.location.href='RegisteringForm.jsp' > <br/>
-</fieldset>
-</span>
+<div class="Rbox">
+    <p>
+        <b> What are you waiting for  </b>
+        <b> Sign Up Now ! </b>
+    </p>
+    <br> <input type="button" value="Register" onclick=window.location.href='RegisteringForm.jsp' > <br/>
+
+</div>
+
+<button class="button" style="vertical-align:middle"><span>First time here </span></button>
+<h2 id="h2"> you have a question !</h2>
+<button class="contact" style="vertical-align:middle"><span>Contact us now ! </span></button>
 </body>
-</html>
+</html
