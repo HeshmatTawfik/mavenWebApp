@@ -8,7 +8,14 @@
 </head>
 <body>
 
-<h1 id="h1"> you can sign in below </h1>
+<ul>
+    <li><a href="index.jsp">Home</a></li>
+    <li><a href="RegisteringForm.jsp">Register</a></li>
+    <li><a href="">About</a></li>
+    <li><a href="">Contact us</a></li>
+
+</ul>
+<h1 id="h1"> Already a member? </h1>
 <div class="LoginBox">
 
     <form method="post" action="Login">
@@ -16,6 +23,9 @@
             Password:<input type="password" name="pass" id="pass"/><br/>
         </p>
         <input type="submit" value="sign in" id="snbtn"/>
+        <h2 id="h2"> New here?</h2>
+        <br> <input type="button" id="box2" value="Register now" onclick=window.location.href='RegisteringForm.jsp' > <br/>
+
         <script src="ValdiateEmail.js"></script>
         <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="disableButton.js"></script>
@@ -30,16 +40,10 @@
 
 %>
 <div class="Rbox">
-    <p>
-        <b> What are you waiting for  </b>
-        <b> Sign Up Now ! </b>
-    </p>
-    <br> <input type="button" value="Register" onclick=window.location.href='RegisteringForm.jsp' > <br/>
-
+    <p> you have a question !</p>
+    <button  id="box" style="vertical-align:middle"><span>Contact us now ! </span></button>
 </div>
 
-<button class="button" style="vertical-align:middle"><span>First time here </span></button>
-<h2 id="h2"> you have a question !</h2>
-<button class="contact" style="vertical-align:middle"><span>Contact us now ! </span></button>
+
 </body>
 </html>
