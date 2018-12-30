@@ -38,7 +38,7 @@ public class Register extends HttpServlet {
         String select=" select USEREMAIL from user";
 
         try {
-            if(username!=""&&email!=""&&pass!=""&&age!="" &&city!=""&&role!="") {
+            if(username!=""&&email!=""&&pass!=""&&age!="" &&city!=""&&role!=null) {
                 setUnique(true);
                 Connection conn=ConnectionManger.getConnection();
                 Statement st=conn.createStatement();
