@@ -17,13 +17,16 @@ public class Login extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         response.setContentType("text/html;charset=UTF-8");
-        User userLogin = new User(loginEmail, logInpass);
+         User userLogin = new User(loginEmail, logInpass);
 
         if (UserDAO.userLogin(userLogin.getEmail(), userLogin.getPass(), userLogin.getRole(), userLogin)) {
             HttpSession session = request.getSession();
+            int userId=userLogin.getId();
             response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
             session.setAttribute("email", loginEmail);
             session.setAttribute("username", userLogin.getName());
+            session.setAttribute("role",userLogin.getRole());
+            session.setAttribute("userId",userLogin.getId());
             if (userLogin.getRole().equals("employer")) {
                 response.sendRedirect("EmployerPage.jsp");
             } else if (userLogin.getRole().equals("applicant")) {
@@ -40,6 +43,7 @@ public class Login extends HttpServlet {
 
 
     }
+
 
 
 }

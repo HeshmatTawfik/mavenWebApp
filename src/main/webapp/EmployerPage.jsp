@@ -18,9 +18,14 @@
 
 <input type="button" value="check applicants"  onclick=window.location.href='CheckApplicant.jsp'> <br/>
 <h3> you want to post a new job ?</h3>
-<input type="button" value="publish a job"  onclick=window.location.href='JobPostForm.jsp'> <br/>
+<input type="button" value="publish a job"  onclick=window.location.href='PostJobs.jsp'> <br/>
+<!--<input type="button" value="your posted jobs"  onclick=window.location.href='EmpPostedJobs.jsp'> <br/>-->
+<!--<input type="button" value=<a href="EmpPostedJobs.jsp"></a>-->
+<!--<a href="EmpPostedJobs.jsp" class="w3-btn w3-black">Link Button</a>-->
+<form method="post" action="EmpPostedJobs">
+    <input type="submit" value="go to" />
 
-
+</form>
 <%
     response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
     response.setHeader("Progma","no-cache");

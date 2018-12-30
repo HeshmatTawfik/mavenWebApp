@@ -12,7 +12,7 @@
 <div class="LoginBox">
 
     <form method="post" action="Login">
-        <p>  Email:<input type="text" name="email" pattern="[^'\x22]+" id="email"/><br/>
+        <p> Email:<input type="text" name="email" pattern="[^'\x22]+" id="email"/><br/>
             Password:<input type="password" name="pass" id="pass"/><br/>
         </p>
         <input type="submit" value="sign in" id="snbtn"/>
@@ -24,17 +24,33 @@
 
 </div>
 <%
-    if(session.getAttribute("email")!=null){
-        response.sendRedirect("ProfilePage.jsp");
+    if (session.getAttribute("email") != null)
+    {
+        if (session.getAttribute("role").equals("employer"))
+        {
+            response.sendRedirect("EmployerPage.jsp");
+        }
+
+         if (session.getAttribute("role").equals("applicant"))
+         {
+            response.sendRedirect("ApplicantPage.jsp");
+         }
+         if(session.getAttribute("role")==null){
+             response.sendRedirect("index.jsp");
+
+         }
+
     }
+
+
 
 %>
 <div class="Rbox">
     <p>
-        <b> What are you waiting for  </b>
+        <b> What are you waiting for </b>
         <b> Sign Up Now ! </b>
     </p>
-    <br> <input type="button" value="Register" onclick=window.location.href='RegisteringForm.jsp' > <br/>
+    <br> <input type="button" value="Register" onclick=window.location.href='RegisteringForm.jsp'> <br/>
 
 </div>
 

@@ -112,7 +112,14 @@ public class User {
 
 
     }
+    public User(String email) {
+        this.setEmail(email);
 
+
+    }
+public User(int id){
+        this.setId(id);
+}
     public User(String name, String email, String pass, int age, String city) {
         this.setName(name);
         this.setEmail(email);

@@ -13,7 +13,7 @@
 <body>
 <form method="post" action="Register" class="signUpForm">
 <fieldset>
-  <label> Email12:<input type="text" id="1" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="example@example.com"/><br/></label>
+  <label> Email1:<input type="text" id="1" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="example@example.com"/><br/></label>
     <label>   Password:<input type="password" id="2" name="pass"  pattern=".{6,}" title="Six or more characters"/><br/></label>
     <label>   Name:<input type="text" id="3" name="name" pattern="[^'\x22]+" title="only letters"/><br/></label>
     <label> Age:<input type="number" id="4" name="age"  step="1" min="16" max="60" title="age no more than 60"/><br/></label>

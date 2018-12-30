@@ -8,12 +8,12 @@ public class UserDAO {/**user database access object*/
      * userLogin method is responsible to return isCanLog --look at User class variables--
      * that in case isCanLog was true it will redirect the user to profile page
      */
-
+    public static User employerID = new User();
 
     public static boolean userLogin(String email, String password, String role, User user) {
 
         Connection con = ConnectionManger.getConnection();
-        String employerSqlLogin = "select USERNAME,USEREMAIL,USERPASS,USERTYPE from USER where USEREMAIL= ? and USERPASS= ?";
+        String employerSqlLogin = "select USERNAME,USEREMAIL,USERPASS,USERTYPE,USERID from USER where USEREMAIL= ? and USERPASS= ?";
         try {
             PreparedStatement p = con.prepareStatement(employerSqlLogin);
             p.setString(1, email);
@@ -25,9 +25,11 @@ public class UserDAO {/**user database access object*/
                 user.setCanLog(true);
                 String name = rs1.getString("USERNAME");
                 String type = rs1.getString("USERTYPE");
+                int id = rs1.getInt("USERID");
                 user.setName(name);
                 user.setRole(type);
-
+                user.setId(id);
+                employerID.setId(id);
                 return user.isCanLog();
 
             } else {
@@ -43,6 +45,8 @@ public class UserDAO {/**user database access object*/
         }
         return user.isCanLog();
     }
+
+
 
 
 }
