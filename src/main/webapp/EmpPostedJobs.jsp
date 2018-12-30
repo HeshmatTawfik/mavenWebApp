@@ -21,14 +21,20 @@
             border-collapse: collapse;
             width: 100%;
         }
+        th{
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            background-color:tomato;
 
-        td, th {
+        }
+        td  {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
         }
 
-        tr:nth-child(even) {
+        tr:nth-child(odd) {
             background-color: #dddddd;
         }
     </style>

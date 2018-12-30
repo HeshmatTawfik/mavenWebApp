@@ -38,6 +38,10 @@ public final class RequestWrapper extends HttpServletRequestWrapper {
         value = value.replaceAll("[\\\"\\\'][\\s]*javascript:(.*)[\\\"\\\']", "\"\"");
         value = value.replaceAll("script", "");
 
+
+
+
+
         return value;
     }
 }
