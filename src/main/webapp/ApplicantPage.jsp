@@ -31,7 +31,7 @@
 
     <a href="#" class="active">Home</a>
     <a href="#" id="aa">Profile</a>
-    <a href="#">search job</a>
+    <a href="JobSearch.jsp">search job</a>
     <a href="#">applied jobs</a>
     <a href="Logout">Logout</a>
 
