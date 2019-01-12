@@ -27,7 +27,7 @@ public class EmpPostedJobs extends HttpServlet {
         String employerSqlLogin = "select * from JOB where POSTEDBY= 23";
         try {
 
-            out.print("<h1>hello</h1>");
+         //   out.print("<h1>hello</h1>");
             String employerSqlLogin1 = "select * from JOB where POSTEDBY= ?";
             PreparedStatement p = con.prepareStatement(employerSqlLogin1);
             p.setInt(1, posted);

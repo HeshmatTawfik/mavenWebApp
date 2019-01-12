@@ -18,11 +18,14 @@ public class PostJob extends HttpServlet {
         String jobName = request.getParameter("jobName");
         String jobDescription = request.getParameter("jobDescription");
         PrintWriter out = response.getWriter();
-
         int postedBy = UserDAO.employerID.getId();
+        java.sql.Date date=new java.sql.Date(System.currentTimeMillis());
+        String formatDate= String.format("%tm/%<td/%<tY\n",date );
+
 
         String insert = " insert into JOB (JOBNAME, JOBDESCRIPTION, JOBCATEGORY, POSTEDBY, POSTDATE)"
                 + " values (?,?,?,?,?)";
+
 
         try {
             Connection conn = ConnectionManger.getConnection();
@@ -32,7 +35,7 @@ public class PostJob extends HttpServlet {
             stmt.setString(2, jobDescription);
             stmt.setString(3, jobCategory);
             stmt.setInt(4, postedBy);
-            stmt.setString(5, "-");
+            stmt.setString(5, formatDate);
             boolean aa = stmt.execute();
             String isPosted = Boolean.toString(!aa);
             HttpSession session = request.getSession();
