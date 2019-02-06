@@ -22,7 +22,7 @@
 <!--<input type="button" value="your posted jobs"  onclick=window.location.href='EmpPostedJobs.jsp'> <br/>-->
 <!--<input type="button" value=<a href="EmpPostedJobs.jsp"></a>-->
 <!--<a href="EmpPostedJobs.jsp" class="w3-btn w3-black">Link Button</a>-->
-<form method="get" action="EmpPostedJobs">
+<form method="post" action="EmpPostedJobs">
     <input type="submit" value="My jobs" />
 
 </form>

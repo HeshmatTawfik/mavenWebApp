@@ -1,3 +1,4 @@
+import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +17,7 @@ import java.util.List;
 
 @WebServlet("/EmpPostedJobs")
 public class EmpPostedJobs extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         HttpSession session=request.getSession();
 
@@ -32,6 +33,7 @@ public class EmpPostedJobs extends HttpServlet {
             PreparedStatement p = con.prepareStatement(employerSqlLogin1);
             p.setInt(1, posted);
             ResultSet rs = p.executeQuery();
+
 
             while(rs.next()){
 

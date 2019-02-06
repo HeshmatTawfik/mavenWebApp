@@ -10,36 +10,11 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.*" %>
 
-
-
-
 <html>
 <head>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th{
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-            background-color:tomato;
+    <link rel="stylesheet" type="text/css" href="TablesFormat.css">
 
-        }
-        td  {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(odd) {
-            background-color: #dddddd;
-        }
-    </style>
     <title>Title</title>
-
 </head>
 <body>
 
@@ -51,6 +26,7 @@
             <th>job name</th>
             <th>category</th>
             <th>posted date</th>
+            <th> view </th>
 
         </tr>
         <%
@@ -77,6 +53,7 @@
         <td><%=rs.getString("JOBNAME") %></td>
         <td><%=rs.getString("JOBCATEGORY") %></td>
         <td><%=rs.getString("POSTDATE") %></td>
+           <td><form method="post" action="WhoApplied"> <button name="submit1" type="submit" value="<%=rs.getInt("JOBID") %>">Show</button></form></td>
         </tr>
         <%
 
