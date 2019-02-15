@@ -16,11 +16,10 @@ import java.sql.ResultSet;
 public class JobSearch extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        HttpSession session = request.getSession();
         Connection con = ConnectionManger.getConnection();
-        String jc= request.getParameter("JOBCATEGORY");
 
-        try {            RequestDispatcher rd = request.getRequestDispatcher("JobSearch.jsp");
+        try {
+            RequestDispatcher rd = request.getRequestDispatcher("JobSearch.jsp");
             rd.include(request, response);
 
             out.print(request.getParameter("JOBCATEGORY"));

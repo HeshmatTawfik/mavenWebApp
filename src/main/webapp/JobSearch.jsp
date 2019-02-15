@@ -27,67 +27,7 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
-    /* Dropdown Button */
-    .dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    }
-
-    /* Dropdown button on hover & focus */
-    .dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
-    }
-
-    /* The search field */
-    #myInput {
-    border-box: box-sizing;
-
-    background-position: 14px 12px;
-    background-repeat: no-repeat;
-    font-size: 16px;
-    padding: 14px 20px 12px 45px;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    }
-
-    /* The search field when it gets focus/clicked on */
-    #myInput:focus {outline: 3px solid #ddd;}
-
-    /* The container <div> - needed to position the dropdown content */
-    .dropdown {
-    position: relative;
-    display: inline-block;
-    }
-
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f6f6f6;
-    min-width: 230px;
-    border: 1px solid #ddd;
-    z-index: 1;
-    }
-
-    /* Links inside the dropdown */
-    .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    }
-
-    /* Change color of dropdown links on hover */
-    .dropdown-content a:hover {background-color: #f1f1f1}
-
-    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-    .show {display:block;}
     </style>
-
      </head>
 <body>
 <form method="get" action="JobSearch">
@@ -98,38 +38,21 @@
     <option value="Marketing" >Marketing</option>
     <option value="Writing" >Writing </option>
     <option value="Translation" >Translation </option>
+
 </select>
         </label><br>
         <input type="submit" value="search" />
     </fieldset>
 </form>
 
-<script>function myFunction() {
-document.getElementById("myDropdown").classList.toggle("show");
-}
 
-function filterFunction() {
-var input, filter, ul, li, a, i;
-input = document.getElementById("myInput");
-filter = input.value.toUpperCase();
-div = document.getElementById("myDropdown");
-a = div.getElementsByTagName("a");
-for (i = 0; i < a.length; i++) {
-txtValue = a[i].textContent || a[i].innerText;
-if (txtValue.toUpperCase().indexOf(filter) > -1) {
-a[i].style.display = "";
-} else {
-a[i].style.display = "none";
-}
-}
-}
-</script>
-<table border="2">
+<table border="2" id="table">
     <tr>
-        <th>Job ID</th>
+        <th>Job ID </th>
         <th>job name</th>
         <th>category</th>
         <th>posted date</th>
+        <th> view </th>
 
     </tr>
 <%  try
@@ -139,7 +62,7 @@ a[i].style.display = "none";
     String username="heshmat@usersdatabase1";
     String password="Website1";
     String jc= request.getParameter("JOBCATEGORY");
-    String query="select * from JOB where JOBCATEGORY="+jc;
+    String query="select * from JOB where JOBCATEGORY='"+jc+"'";
     Connection conn=DriverManager.getConnection(url, username, password);
     Statement stmt=conn.createStatement();
     ResultSet rs=stmt.executeQuery(query);
@@ -148,17 +71,19 @@ a[i].style.display = "none";
 %>
 
 <tr>
-
     <td><%=rs.getInt("JOBID") %></td>
-    <td><%=rs.getString("JOBNAME") %></td>
+    <td><%=rs.getString("JOBNAME") %>  </td>
     <td><%=rs.getString("JOBCATEGORY") %></td>
     <td><%=rs.getString("POSTDATE") %></td>
+    <td><form method="post" action="ViewJob"> <button name="submit1" type="submit" value="<%=rs.getInt("JOBID") %>">Show</button></form></td>
 </tr>
-<%
+
+    <%
 
     }
 %>
 </table>
+
 <%
         rs.close();
         stmt.close();
